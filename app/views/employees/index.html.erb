@@ -2,9 +2,9 @@
 
 <p style="color: green"><%= notice %></p>
 
-<td> <%= link_to 'New Employee', new_employee_path %> </td>
-<td> <%= link_to 'New Role', new_role_path %> </td>
-<td> <%= link_to 'New Department', new_department_path %> </td>
+<td> <%= link_to 'New Employee', new_employee_path,class:"btn btn-primary" %> </td>
+<td> <%= link_to 'New Role', new_role_path, class:"btn btn-info" %> </td>
+<td> <%= link_to 'New Department', new_department_path, class:"btn btn-primary" %> </td>
 
 
 <table class="table table-bordered">
@@ -43,9 +43,9 @@
 <td> <%= employee.allowances %> </td>
 <td> <%= employee.hire_date %> </td>
 <td> <%= employee.created_at.strftime('%d-%m-%Y/%H:%M:%S') %> </td>
-<td> <%= link_to 'View', employee %> </td>
-<td> <%= link_to 'Edit', edit_employee_path(employee) %></td>
-<td> <%= button_to 'Delete', employee, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+<td> <%= link_to 'View', employee, class:"btn btn-info" %> </td>
+<td> <%= link_to 'Edit', edit_employee_path(employee), class:"btn btn-primary" %></td>
+<td> <%= link_to 'Delete', employee, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %> </td>
 
 </tr>
 <% end %>

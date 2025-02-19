@@ -15,9 +15,9 @@
 <p><strong>Hire Date: </strong><%= @employee.hire_date %></p>
 <p><strong>Created Time: </strong><%= @employee.created_at %></p>
 
-<td> <%= link_to 'Back', employees_path %> </td> | <td> <%= link_to 'Edit', edit_employee_path(@employee) %> </td> |
-
-<td> <%= link_to 'Delete', employees_path, method: :delete, data: {confirm: 'Are you sure?'} %> </td>
+<%= link_to 'Back', employees_path, class:"btn btn-success" %> 
+<%= link_to 'Edit', edit_employee_path(@employee), class:"btn btn-primary" %> 
+<%= link_to 'Delete', employees_path, class:"btn btn-danger", method: :delete, data: {confirm: 'Are you sure?'} %> 
 
 
 

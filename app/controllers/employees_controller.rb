@@ -39,6 +39,7 @@ class EmployeesController < ApplicationController
     @employee = Employee.find(params[:id])
     @employee.destroy
     redirect_to employees_path, notice: "Employee has been deleted successfully"
+    # data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
   end
 
   private
