@@ -1,0 +1,66 @@
+
+<h1> Edit Employee </h1>
+
+
+<%= form_with(model: @employee, data: { turbo: false}) do |form| %>
+
+  <% if @employee.errors.any? %> 
+      <% @employee.errors.full_messages.each do |message| %>
+          <p style="color: red"> <%= message %> </p>
+      <% end %>
+  <% end %>
+
+  
+  <div class="field">
+  <%= form.label :first_name %><br>
+  <%= form.text_field :first_name %>
+ </div>
+
+ <div class="field">
+  <%= form.label :last_name %><br>
+  <%= form.text_field :last_name %>
+ </div>
+
+ <div class="field">
+ <%= form.label :email %><br>
+ <%= form.email_field :email %>
+ </div>
+
+ <div class="field">
+<%= form.label :role_id %><br>
+<%= form.collection_select(:role_id, @roles, :id, :name) %>
+
+</div>
+
+<div class="field">
+<%= form.label :department_id %><br>
+<%= form.collection_select(:department_id, @departments, :id, :name) %>
+</div>
+
+<div class="field">
+<%= form.label :phone %><br>
+<%= form.text_field :phone %>
+</div>
+
+<div class="field">
+<%= form.label :basic_pay, "Salary" %><br>
+<%= form.text_field :basic_pay %>
+</div>
+
+<div class="field">
+ <%= form.label :allowances %><br>
+ <%= form.text_field :allowances %>
+</div>
+
+<div class="field">
+ <%= form.label :hire_date %><br>
+ <%= form.date_field :hire_date %>
+</div>
+
+<div class="actions">
+ <%= form.submit %>
+</div>
+
+<% end %> 
+
+

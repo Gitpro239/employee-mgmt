@@ -1,0 +1,15 @@
+<div class="text-center">
+<div class="pb-32 flex flex-col items-center justify-center min-h-screen bg-indigo-500">
+<div class="max-w-2xl w-full mx-auto flex flex-col items-center">
+
+  <h1 class="font-bold text-7xl text-indigo-100">Employee Managemebnt System</h1>
+  <p class="text-lg text-gray-200">Thank You Coming Managemebnt</p>
+   <% if current_user %>
+      <%= button_to "Sign Out", destroy_user_session_path, class: "bg-purple-500 text-purple-100 p-2 rounded-lg w-32 text-center", 
+      data: { turbo_method: :delete } %>
+   <% else %>
+      <%= link_to "Sign In", new_user_session_path, class: "bg-green-500 text-green-100 p-2 rounded-lg w-32 text-center" %>
+   <% end %>
+ </div>
+</div>
+</div>

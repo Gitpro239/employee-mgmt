@@ -1,0 +1,77 @@
+
+<%= form_with(model: employee, data: { turbo: false}) do |form| %>
+
+    <div>
+     <%= form.label :first_name %><br>
+     <%= form.text_field :first_name %>
+      <p style="color: red"> <%= employee.errors.full_messages_for(:first_name).each do |message| %>
+       <% end %></p>
+    </div>
+ 
+    <div>
+     <%= form.label :last_name %><br>
+     <%= form.text_field :last_name %>
+      <%= employee.errors.full_messages_for(:last_name).each do |message| %>
+         <p style="color: red"><%= message %></p>
+      <% end %>
+    </div>
+ 
+   <div>
+    <%= form.label :email %><br>
+    <%= form.email_field :email %>
+   <%= employee.errors.full_messages_for(:email).each do |message| %>
+       <p class="text-danger"><%= message %></p>
+       <% end %>
+   </div>
+ 
+    <div>
+   <%= form.label :role_id, "Role" %><br>
+   <%= form.collection_select(:role_id, @roles, :id, :name) %>
+      <%= employee.errors.full_messages_for(:role).each do |message| %>
+         <p style="color: red"><%= message %></p>
+      <% end %>    
+   </div>
+ 
+   <div>
+  <%= form.label :department_id, "Department" %><br>
+  <%= form.collection_select(:department_id, @departments, :id, :name) %>
+      <%= employee.errors.full_messages_for(:department).each do |message| %>
+         <p style="color: red"><%= message %></p>
+      <% end %>
+  </div>
+ 
+ <div>
+   <%= form.label :phone %><br>
+   <%= form.text_field :phone %>
+      <%= employee.errors.full_messages_for(:phone).each do |message| %>
+         <p style="color: red"><%= message %></p>
+      <% end %>
+ </div>
+ 
+  <div>
+  <%= form.label :basic_pay, "Salary" %><br>
+  <%= form.text_field :basic_pay %>
+      <%= employee.errors.full_messages_for(:basic_pay).each do |message| %>
+         <p style="color: red"><%= message %></p>
+       <% end %>
+  </div>
+ 
+    <div>
+     <%= form.label :allowances %><br>
+     <%= form.text_field :allowances %>
+    </div>
+ 
+    <div>
+     <%= form.label :hire_date %><br>
+     <%= form.date_field :hire_date %>
+      <%= employee.errors.full_messages_for(:hire_date).each do |message| %>
+         <p style="color: red"><%= message %></p>
+       <% end %>
+    </div>
+ 
+    <div>
+    <%= form.submit %>
+   </div>
+    <% end %> 
+
+

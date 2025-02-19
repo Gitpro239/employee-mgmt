@@ -1,0 +1,26 @@
+<h1> Employee Details </h1>
+
+
+<p><strong>ID: </strong><%= @employee.id %></p>
+<p><strong>First Name: </strong><%= @employee.first_name %></p>
+<p><strong>Last Name: </strong><%= @employee.last_name %></p>
+<p><strong>Email: </strong><%= @employee.email %></p>
+<p><strong>Role: </strong><%= @employee.role&.name %></p>
+<p><strong>Department: </strong><%= @employee.department&.name %></p>
+<p><strong>Location: </strong><%= @employee.department&.location %></p>
+<p><strong>Phone: </strong><%= @employee.phone %></p>
+<p><strong>Salary: </strong><%= @employee.basic_pay %></p>
+<p><strong>Allowances: </strong><%= @employee.allowances %></p>
+<p><strong>Net Salary: </strong><%= @employee.perform() %></p>
+<p><strong>Hire Date: </strong><%= @employee.hire_date %></p>
+<p><strong>Created Time: </strong><%= @employee.created_at %></p>
+
+<td> <%= link_to 'Back', employees_path %> </td> | <td> <%= link_to 'Edit', edit_employee_path(@employee) %> </td> |
+
+<td> <%= link_to 'Delete', employees_path, method: :delete, data: {confirm: 'Are you sure?'} %> </td>
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+<h1>Listing All Employees </h1>
+
+<p style="color: green"><%= notice %></p>
+
+<td> <%= link_to 'New Employee', new_employee_path %> </td>
+<td> <%= link_to 'New Role', new_role_path %> </td>
+<td> <%= link_to 'New Department', new_department_path %> </td>
+
+
+<table class="table table-bordered">
+<thead class="text-center">
+<tr>
+
+<th>ID</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+<th>Role</th>
+<th>Department</th>
+<th>Phone</th>
+<th>Net Salary</th>
+<th>Salary</th>
+<th>Allowances</th>
+<th>Hire Date</th>
+<th>Created Time</th>
+<th colspan="3">Action</th>
+</tr>
+
+</thead>
+<tbody class="text-center">
+<% @employees.each do |employee|%>
+<tr>
+
+<td> <%= employee.id %> </td>
+<td> <%= employee.first_name %> </td>
+<td> <%= employee.last_name %> </td>
+<td> <%= employee.email %> </td>
+<td> <%= employee.role&.name %> </td>
+<td> <%= employee.department&.name %> </td>
+<td> <%= employee.phone %> </td>
+<td> <%= employee.perform() %> </td>
+<td> <%= employee.basic_pay %> </td>
+<td> <%= employee.allowances %> </td>
+<td> <%= employee.hire_date %> </td>
+<td> <%= employee.created_at.strftime('%d-%m-%Y/%H:%M:%S') %> </td>
+<td> <%= link_to 'View', employee %> </td>
+<td> <%= link_to 'Edit', edit_employee_path(employee) %></td>
+<td> <%= button_to 'Delete', employee, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+
+</tr>
+<% end %>
+
+</tbody>
+</table>
+
+<td> <%= paginate @employees %> </td>
