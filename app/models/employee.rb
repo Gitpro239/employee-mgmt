@@ -1,5 +1,5 @@
 class Employee < ApplicationRecord
-    paginates_per 3
+    paginates_per 5
 
     belongs_to :role
     belongs_to :department

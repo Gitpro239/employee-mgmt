@@ -2,9 +2,9 @@
 
 <p style="color: green"><%= notice %></p>
 
-<td> <%= link_to 'New Employee', new_employee_path,class:"btn btn-primary" %> </td>
-<td> <%= link_to 'New Role', new_role_path, class:"btn btn-info" %> </td>
-<td> <%= link_to 'New Department', new_department_path, class:"btn btn-primary" %> </td>
+<%= link_to 'New Employee', new_employee_path,class:"btn btn-primary" %>
+<%= link_to 'New Role', new_role_path, class:"btn btn-info" %> 
+<%= link_to 'New Department', new_department_path, class:"btn btn-primary" %>
 
 
 <table class="table table-bordered">
@@ -53,4 +53,4 @@
 </tbody>
 </table>
 
-<td> <%= paginate @employees %> </td>
+<%= paginate @employees %> 
