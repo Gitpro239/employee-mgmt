@@ -68,6 +68,7 @@ gem "dartsass-rails"
 gem "bootstrap", "~> 5.3.3"
 
 gem 'kaminari'    # Pagination
+gem 'ransack'
 
 gem 'money-rails' # Salary calculation
 
@@ -77,9 +78,9 @@ gem 'sidekiq'    # Background jobs for payroll
 
 # gem 'pundit'    # Authorization
 
-gem 'groupdate' # Grouping data
+# gem 'groupdate' # Grouping data
 
-gem 'chartkick' # Reports & analytics
+# gem 'chartkick' # Reports & analytics
 
 gem "devise", "~> 4.9"  # Authentication
 

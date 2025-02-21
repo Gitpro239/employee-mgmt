@@ -1,6 +1,9 @@
 class EmployeesController < ApplicationController
   def index
-    @employees = Employee.all.page params[:page]
+    @q = Employee.ransack(params[:q])
+    @employees = @q.result(distinct: true).page(params[:page])
+    # @employees = Employee.all.page(params[:page])
+    # filter_employees
   end
   def show
     @employee = Employee.find(params[:id])
@@ -46,5 +49,11 @@ class EmployeesController < ApplicationController
 
   def employee_params
     params.require(:employee).permit(:first_name, :last_name, :email, :role_id, :department_id, :phone, :basic_pay, :allowances, :hire_date)
+  end
+
+  def filter_employees
+    @employees = @employees.by_department(params[:department]) if params[:department].present?
+    @employees = @employees.by_role(params[:role]) if params[:role].present?
+    @employees = @employees.by_hire_date(params[:hire_date]) if params[:hire_date].present?
   end
 end

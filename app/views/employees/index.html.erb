@@ -1,5 +1,23 @@
 <h1>Listing All Employees </h1>
 
+<%= search_form_for @q, url: :employees do |form| %>
+
+ <div class="form-group">
+  <%= form.label :first_name %>
+  <%= form.text_field :first_name_cont, class: "form-control" %>
+ </div>
+
+ <div class="form-group">
+  <%= form.label :email %>
+  <%= form.email_field :email_cont, class: "form-control" %>
+ </div>
+
+ <div class="form-group">
+  <%= form.submit class: "btn btn-primary" %>
+ </div>
+
+<% end %>
+
 <p style="color: green"><%= notice %></p>
 
 <%= link_to 'New Employee', new_employee_path,class:"btn btn-primary" %>
@@ -54,3 +72,30 @@
 </table>
 
 <%= paginate @employees %> 
+
+
+<!-- Filter Employee 
+<%= form_with url: employees_path, method: :get, local: true do %>
+  <div>
+    <%= label_tag :department, 'Department' %>
+    <%= text_field_tag :department, params[:department.name] %>
+  </div>
+  <div>
+    <%= label_tag :role, 'Role' %>
+    <%= text_field_tag :role, params[:role.name] %>
+
+  </div>
+  <div>
+    <%= label_tag :hire_date, 'Hire Date' %>
+    <%= date_field_tag :hire_date, params[:hire_date] %>
+  </div>
+  <%= submit_tag 'Filter' %>
+<% end %>
+
+<h2>Employees</h2>
+<ul>
+  <% @employees.each do |employee| %>
+    <li><%= employee.first_name %> - <%= employee.role&.name %> - <%= employee.hire_date %></li>
+  <% end %>
+</ul>
+-->

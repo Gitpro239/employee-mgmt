@@ -15,6 +15,15 @@ class Employee < ApplicationRecord
     validates :phone, numericality: true, uniqueness: true
     validates :phone, presence: true
 
+    # Filter Employee scope
+    # scope :by_department, ->(department) { where(department: department) }
+    # scope :by_role, ->(role) { where(role: role) }
+    # scope :by_hire_date, ->(date) { where("hire_date >= ?", date) }
+
+    def self.ransackable_attributes(auth_object = nil)
+       [ "allowances", "basic_pay", "created_at", "department_id", "email", "first_name", "hire_date", "id", "last_name", "phone", "role_id", "updated_at" ]
+    end
+
     def perform
         employee_id = self.id # employee_id = id
 
