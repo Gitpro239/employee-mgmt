@@ -4,6 +4,12 @@ class EmployeesController < ApplicationController
     @employees = @q.result(distinct: true).page(params[:page])
     # @employees = Employee.all.page(params[:page])
     # filter_employees
+    # if params[:search_query].present?
+    #   @employees = Employee.where("name LIKE ?", "%#{params[:search_query]}%")
+    # else
+    #   @employees = Employee.all
+    # end
+    
   end
   def show
     @employee = Employee.find(params[:id])
