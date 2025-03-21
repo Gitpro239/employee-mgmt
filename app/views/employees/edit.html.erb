@@ -1,3 +1,4 @@
+<div class="px-2">
 
 <h1> Edit Employee </h1>
 
@@ -26,6 +27,11 @@
  <%= form.email_field :email %>
  </div>
 
+<div class="field">
+  <%= form.label :gender %><br>
+  <%= form.select(:gender, [["Male", "male"], ["Female", "female"], ["Other", "other"]], { prompt: 'Choose a gender' }, required: true ) %>
+</div>
+
  <div class="field">
 <%= form.label :role_id %><br>
 <%= form.collection_select(:role_id, @roles, :id, :name) %>
@@ -34,7 +40,7 @@
 
 <div class="field">
 <%= form.label :department_id %><br>
-<%= form.collection_select(:department_id, @departments, :id, :name) %>
+<%= form.collection_select :department_id, Department.order(:name), :id, :name, id: "department", prompt: 'Choose a department', required: true %>
 </div>
 
 <div class="field">
@@ -62,5 +68,5 @@
 </div>
 
 <% end %> 
-
+</div>
 

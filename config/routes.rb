@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  #  devise_for :users
+   devise_for :users
   # devise_for :admin, controllers: {
   #     sessions: 'admin/sessions',
   #     registrations: 'admin/registrations'
   # }
 
-  devise_for :users, controllers: {
-      sessions: "users/sessions"
-  }
+  # devise_for :users, controllers: {
+  #     sessions: "users/sessions"
+  # }
   resources :departments
   resources :roles
   resources :employees

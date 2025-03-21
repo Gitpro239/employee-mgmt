@@ -1,13 +1,15 @@
-<h1> Employee Details </h1>
+<div class="px-2">
 
+<h1> Employee Details </h1>
 
 <p><strong>ID: </strong><%= @employee.id %></p>
 <p><strong>First Name: </strong><%= @employee.first_name %></p>
 <p><strong>Last Name: </strong><%= @employee.last_name %></p>
 <p><strong>Email: </strong><%= @employee.email %></p>
+<p><strong>Gender: </strong><%= @employee.gender %></p>
 <p><strong>Role: </strong><%= @employee.role&.name %></p>
-<p><strong>Department: </strong><%= @employee.department&.name %></p>
-<p><strong>Location: </strong><%= @employee.department&.location %></p>
+<p><strong>Department: </strong><%= @employee.department.name %></p>
+<p><strong>Location: </strong><%= @employee.department.location %></p>
 <p><strong>Phone: </strong><%= @employee.phone %></p>
 <p><strong>Salary: </strong><%= @employee.basic_pay %></p>
 <p><strong>Allowances: </strong><%= @employee.allowances %></p>
@@ -19,7 +21,7 @@
 <%= link_to 'Edit', edit_employee_path(@employee), class:"btn btn-primary" %> 
 <%= link_to 'Delete', employees_path, class:"btn btn-danger", method: :delete, data: {confirm: 'Are you sure?'} %> 
 
-
+</div>
 
 
 

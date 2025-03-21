@@ -1,3 +1,4 @@
+<div class="px-2">
 <h1>Listing All Employees </h1>
 
 <%= search_form_for @q, url: :employees do |form| %>
@@ -54,7 +55,7 @@
 <td> <%= employee.last_name %> </td>
 <td> <%= employee.email %> </td>
 <td> <%= employee.role&.name %> </td>
-<td> <%= employee.department&.name %> </td>
+<td> <%= employee.department.name %> </td>
 <td> <%= employee.phone %> </td>
 <td> <%= employee.perform() %> </td>
 <td> <%= employee.basic_pay %> </td>
@@ -72,7 +73,7 @@
 </table>
 
 <%= paginate @employees %> 
-
+</div>
 
 <!-- Filter Employee 
 <%= form_with url: employees_path, method: :get, local: true do %>
