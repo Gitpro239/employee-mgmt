@@ -85,3 +85,4 @@ gem 'sidekiq'    # Background jobs for payroll
 gem "devise", "~> 4.9"  # Authentication
 
 gem "tailwind_devise", "~> 0.0.3"
+
