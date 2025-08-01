@@ -22,4 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-https://github.com/Gitpro239/employee-mgmt.git
