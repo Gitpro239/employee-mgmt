@@ -22,7 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 ============================================================
-* Firstly create Repository after that Codespaces use < https://github.com/Gitpro239/employee-mgmt > instead of < https://github.com/Gitpro239/employee-mgmt >
+* Firstly create Repository after that Codespaces use < https://github.dev/Gitpro239/employee-mgmt > instead of < https://github.com/Gitpro239/employee-mgmt >
 
 * Create Github Codespace Terminal and Select 4gb and 8 core
 
