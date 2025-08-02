@@ -32,7 +32,7 @@ Things you may want to cover:
 
 * Run < gem install rails >
 
-* Run for new project rails new <project_name>
+* Run for new project < rails new <project_name> >
 
 * Run create contoller for models < rails generate scaffold employees name:string >
 
